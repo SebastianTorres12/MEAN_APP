@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+              <div class="card-body text-center">
+                <span class="titulo">LISTADO DE TAREAS</span>
+                <button class="btn btn-success float-end" routerLink="/crear-tarea" routerLinkActive="active" ariaCurrentWhenActive="page">NUEVA</button>
+                <table *ngIf="listTareas.length > 0" class="table table-striped mt-4">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tarea</th>
+                      <th scope="col">Detalle</th>
+                      <th scope="col">Fecha Inicio</th>
+                      <th scope="col">Fecha Fin</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let tarea of listTareas">
+                      <td>{{ tarea.nombre }}</td>
+                      <td>{{ tarea.detalle }}</td>
+                      <td>{{ tarea.fecha_ini | date:'yyyy-MM-dd' }}</td>
+                      <td>{{ tarea.fecha_fin | date:'yyyy-MM-dd' }}</td>
+                      <td>
+                        <i [routerLink]="['/editar-tarea', tarea._id]" class="fa-regular fa-pen-to-square text-primary"></i>
+                        <i (click)="eliminarTarea(tarea._id)" class="fa-regular fa-trash-can text-danger"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h5 style="text-align: start;margin-top: 10px;" *ngIf="listTareas.length == 0" >No hay tareas para mostrar</h5>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
