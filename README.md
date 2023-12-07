@@ -14,9 +14,9 @@ Primero debemos instalar:
 ### Pasos para Configurar el Proyecto
 
 *Clonar el Repositorio:*
-   bash 
+   ```bash 
    git clone https://github.com/SebastianTorres12/MEAN_APP.git
-   
+   ```
 *Estructura del proyecto:*
 * cliente
 * server
@@ -24,9 +24,9 @@ Primero debemos instalar:
 *Intalación de Dependencias:*  
 
 Dentro de la carpeta **cliente** abrir una terminal integrada y ejecutar el siguiente comando:
-   bash
+  ``` bash
    npm install
-   
+  ``` 
 Esto descargara todas las dependencias necesarias para ejecutar el proyecto.
 
 *Configuracion para la conexion con MongoDB*  
@@ -34,5 +34,18 @@ En este proyecto toda la configuración previa es suficiente para poder conectar
 Este proyecto usa una base de datos en la nube (Mongo Atlas) por lo que no es necesario realizar alguna acción extra.
 
 ### Prueba del proyecto
+
 * Primero corremos el servidor*
-En la carpeta servidor abrimos una terminal integrada y corremos el siguiente comando
+En la carpeta *servidor* abrimos una terminal integrada y corremos el siguiente comando
+  ``` bash
+   npm run dev
+  ```
+* Segundo corremos el sitio
+En la carpeta *cliente* abrimos una terminal integrada y corremos el comando:
+  ``` bash
+  ng serve --0
+  ```
+El cual abrirá automaticamente el sitio en nuestro navegador predeterminado.
+
+Esto debería ser suficiente para poder probar el proyecto sin ningun problema.
+
